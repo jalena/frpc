@@ -1,0 +1,18 @@
+services:
+  frp:
+    image: jalena/frpc:latest
+    container_name: frp
+    restart: always
+    network_mode: host
+    volumes:
+      - ./conf.d/frpc.toml:/etc/frpc.toml
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 100M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"

@@ -1,0 +1,10 @@
+serverAddr = "frp.bcsytv.com"
+serverPort = 7000
+
+[[proxies]]
+name = "secret_ssh"
+type = "stcp"
+# 只有与此处设置的 secretKey 一致的用户才能访问此服务
+secretKey = "abcdefg"
+localIP = "127.0.0.1"
+localPort = 22
