@@ -18,4 +18,4 @@ RUN apk add --no-cache --update tzdata && \
     mkdir -p /var/logs/ && \
     rm -rf /tmp/* /var/cache/apk/*
 
-ENTRYPOINT ["/usr/bin/frpc"]
+ENTRYPOINT ["/usr/bin/frpc", "-c", "/etc/frpc.toml"]
